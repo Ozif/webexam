@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>userpage</title>
+    <style>
+        * {
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: aliceblue;
+            width: 100dvw;
+            height: 100dvh;
+            overflow: hidden;
+            background: linear-gradient(to top, #000000, #1f232c, #233154);
+        }
+
+        /* 居中 */
+        .me {
+            margin: 0 auto;
+            margin-top: 100px;
+            width: 400px;
+        }
+
+        /* 模态框样式 */
+        #model {
+            height: 4rem;
+            width: 200px;
+            ;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* 点击关闭样式 */
+        .click {
+            color: #c9c9c9;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 表单 -->
+    <div class="me">
+        我知道你：<br>
+        <textarea id="mysay" style="height: 100px;width: 200px;">我是ozif。</textarea><br>
+        昵称：<input type="text" id="username" value="ozif"><br>
+        性别：<input type="radio" name="sex" id="boy"><label for="boy">男</label>
+        <input type="radio" name="sex" id="gial"><label for="gial">女</label><br>
+        转生地点<select name="" id="">
+            <option value="">古代</option>
+            <option value="">现代</option>
+            <option value="">异世界</option>
+        </select><br>
+        选择天赋点：<br>
+        <input type="checkbox" name="" id="1"><label for="1">邪王真眼</label>
+        <input type="checkbox" name="" id="2"><label for="2">暗炎魔主</label>
+        <input type="checkbox" name="" id="3"><label for="3">魔法少女telili</label>
+        <input type="checkbox" name="" id="4"><label for="4">4</label>
+        <input type="checkbox" name="" id="5"><label for="5">5</label>
+        <input type="checkbox" name="" id="6"><label for="6">6</label>
+        <input type="checkbox" name="" id="7"><label for="7">7</label>
+        <input type="checkbox" name="" id="8"><label for="8">8</label>
+        <input type="checkbox" name="" id="9"><label for="9">9</label><br>
+        <h1>你很强</h1>
+        <ul>
+            <li>只是被克制了</li>
+            <li>蚊子太多了</li>
+            <li>蚂蚁在爬</li>
+        </ul>
+        <h2>来吧不甘心的人类，与吾缔结契约吧</h2><br>
+        <input type="radio" name="" id="yes"><label for="yes">yes,i do</label><br>
+        <button onclick="model.showModal()">支付六元，成功缔结契约。</button>
+    </div>
+    <!-- 模态框 -->
+    <dialog id="model" onclick="model.close()">
+        成功缔结契约<div class="click">click to close</div>
+    </dialog>
+</body>
+
+</html>
