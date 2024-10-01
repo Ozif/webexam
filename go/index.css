@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+canvas {
+    background: rgb(0, 0, 0);
+}
+
+/* pc端 */
+#GoPage {
+    /* 居中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 子级高度 */
+    height: 50%;
+    border-radius: 20px;
+}
+
+.bottom_index {
+    /* 宽高比例 */
+    height: 100%;
+    aspect-ratio: 8/9;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.flow_ray {
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: linear-gradient(to top, #70ffee, #44cdff, #90ff08);
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    /* 动画 */
+    animation: FlowRay 5s linear infinite;
+}
+
+@keyframes FlowRay {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background: #001a35;
+    width: 98%;
+    height: 98%;
+}
+
+.title,
+.title a {
+    margin: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.image {
+    /* 父相子绝 */
+    position: relative;
+    /* 居中 */
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 80px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.image:hover {
+    /* 变圆后不变 */
+    animation: BecomeCircle 2s linear infinite;
+}
+
+@keyframes BecomeCircle {
+    0% {
+        border-radius: 10px;
+    }
+
+    50% {
+        border-radius: 50%;
+    }
+
+    100% {
+        border-radius: 10px;
+    }
+}
+
+.image img {
+    /* 居中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+}
+
+.image img:hover {
+    animation: imgmove 2s linear infinite;
+}
+
+@keyframes imgmove {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.user input,
+.password input {
+    width: 80%;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: large;
+}
+
+input:focus {
+    box-shadow: 0 0 10px #fff;
+    outline: none;
+}
+
+.go a {
+    display: block;
+    text-align: center;
+    background: #7df3eb;
+    line-height: 40px;
+    margin: 50px;
+    border-radius: 5px;
+    /* 过渡 */
+    transition: all 0.2s;
+}
+
+.go a:hover {
+    font-size: large;
+    background: #3dffd2;
+}

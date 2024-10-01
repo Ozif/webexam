@@ -1,0 +1,67 @@
+html body {
+    background: #000000;
+}
+
+/* 字的变量 */
+:root {
+    --font-size: 100px;
+    --font-howmuch: 2;
+}
+
+h1 {
+    /* 居中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    /* 字 */
+    font-size: var(--font-size);
+    width: calc(var(--font-size) *var(--font-howmuch));
+}
+
+h1::after {
+    content: 'ozif';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--font-size) * var(--font-howmuch));
+    /* height: 99px; */
+    transform: translate(-50%, -50%);
+    color: transparent;
+    background-image: linear-gradient(rgb(255, 214, 214), rgb(255, 246, 214), rgb(234, 255, 214), rgb(218, 255, 214));
+    /* 用背景字体颜色 */
+    background-clip: text;
+    /* 适配 */
+    -webkit-background-clip: text;
+    /* 裁剪：圆形（半径 at x轴位置 y轴位置） */
+    clip-path: circle(40px at 50% 50%);
+    /* 单词 */
+    animation: move 5s infinite;
+}
+
+/* 动画 */
+@keyframes move {
+    0% {
+        clip-path: circle(40px at 0% 50%);
+    }
+
+    25% {
+        clip-path: circle(40px at 100% 50%);
+    }
+
+    50% {
+        clip-path: circle(40px at 0% 50%);
+    }
+
+    75% {
+        clip-path: circle(40px at 50% 50%);
+    }
+
+    90% {
+        clip-path: circle(100px at 50% 50%);
+    }
+
+    100% {
+        clip-path: circle(0px at 50% 50%);
+    }
+}
